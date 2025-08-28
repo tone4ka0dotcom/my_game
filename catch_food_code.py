@@ -123,7 +123,7 @@ def my_game():
     for i in range(8):
         f = Ball(randint(15, 585), randint(500, 1500), 40, 40, 'bomb.png', randint(10, 20) * 0.2)
         f_group.add(f)
-    while f_group and not stop_game:
+    while not stop_game and total_time != 20:
         screen.blit(background, (0, 0))
         plate.reset()
         plate.move()
@@ -148,11 +148,9 @@ def my_game():
         is_game()
         end_time = time()
         total_time = int(end_time - start_time)
-        if total_time == 20 or stop_game:
-            finish()
         clock.tick(30)
         pygame.display.update()
-
+    finish()
 
 def finish():
     update_db(current_player, plate.points)
@@ -173,7 +171,7 @@ def finish():
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 if btn_back.rect.collidepoint(event.pos):
-                    main()
+                    exit()
         clock.tick(30)
         pygame.display.update()
 
