@@ -120,14 +120,14 @@ class Table:
         screen.blit(self.points.text, (self.x+200, self.y))
 
 
-btn_back = Button(200, 400, width_area, height_area, green, beige, 'Назад в меню')
+btn_back = Button(200, 400, width_area, height_area, green, beige, 'Выйти из игры')
 help_area = Area(100, 200, width_area*2, height_area, beige)
 input_area = Area(200, 250, width_area, height_area, beige)
 btn_start = Button(200, 300, width_area, height_area, green, beige, 'Начать игру')
 btn_rules = Button(200, 350, width_area, height_area, green, beige, 'Правила игры')
 back_rect = Area(0, 0, 600, 50, beige)
 txt1 = Text(20, 200, 'В этой игре необходимо набрать больше 30 очков за 20 секунд.', size=23)
-txt2 = Text(20, 260, 'Воротами можно управлять клавишами "вправо"/"влево".', size=23)
+txt2 = Text(20, 260, 'Тарелкой можно управлять клавишами "вправо"/"влево".', size=23)
 txt3 = Text(20, 230, 'Вы выиграете, если наберете 30 очков!', size=23)
 txt4 = Text(20, 290, 'Но остерегайтесь бомб! Коснувшись бомбы, вы проиграете :(', size=23)
 exp_group = []
@@ -136,4 +136,3 @@ for j in names_bomb:
     e = Ball(150, 75, 300, 300, 'Explosion/' + j, 0)
     exp_group.append(e)
 plate = Goal(250, 75, 168, 93, 'goals.png', 9, 0)
-
